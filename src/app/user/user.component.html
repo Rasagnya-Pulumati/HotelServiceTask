@@ -1,0 +1,65 @@
+
+<p>user works!</p>
+<div >
+    <table>
+        <tr>
+            <td>
+                Wishlist <br/>
+                {{wishlistCount}}  
+            </td>
+        </tr>
+        <tr>
+            
+            <td>
+                Filter Hotel 
+                Location
+                
+                    <select #location (change)="getFilterData(location.value)">
+                        <option> Banglore </option>
+                        <option> New Delhi </option>
+                        <option> Hyderabad </option>
+                        <option> Chennai </option>
+                    </select>
+                   
+            
+            </td>
+            
+        </tr>
+    </table>
+   
+
+
+</div>
+
+
+
+<hr/>
+<div *ngFor="let h of allHotel">
+<table>
+    <tr>
+        <td> <img src="/assets/Images/{{h.imageName}}" alt="Hotel image" width="120px" height="150px"> </td>
+        <td> 
+            <h2>{{h.hotelName}} </h2>
+            <p> {{h.about}} </p>
+            <hr/>
+            <span>Hotel Price <span [style]="h.price<75?priceLowCss:priceNormalCSS" >{{h.price|currency}}    </span>  
+                <i *ngIf="h.discount>0"> 
+                    with {{h.discount}}% Off 
+                    <span *ngIf="h.discount>9">
+                        <b style="color: blue; font-family: Georgia, 'Times New Roman', Times, serif;"><u> Recommended</u></b>
+                    </span>
+                </i> 
+        
+            </span> 
+            <br/>
+            Hotel Duration {{h.duration}} Days 
+            <hr/>
+            <button value="{{h.hotelId}}" (click)="goForBook(hotel.value)" #hotel> Book Now </button>
+            <button value="{{h.hotelId}}" (click)="addWishlist(hotel.value)" #hotel> Add to Wishlist </button>
+                
+            
+        </td>
+        
+    </tr>
+</table>
+</div>

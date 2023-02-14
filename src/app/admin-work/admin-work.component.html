@@ -1,0 +1,56 @@
+<p>admin-work works!</p>
+<table>
+    <tr>
+        <td> Enter  Hotel Id </td>
+        <td> <input type="text" #hotelId/> </td>
+    </tr>
+    <tr>
+        <td> Enter  Hotel Name </td>
+        <td> <input type="text" #hotelName/> </td>
+    </tr>
+    <tr>
+        <td> Duration </td>
+        <td> <input type="text" #duration/> </td>
+    </tr>
+    <tr>
+        <td>Location</td>
+        <td> 
+            <select #location>
+                <option> Banglore </option>
+                <option> New Delhi </option>
+                <option> Hyderabad </option>
+                <option> Chennai </option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td> Hotel Manager Name </td>
+        <td> <input type="text" #manager/> </td>
+    </tr>
+    <tr>
+        <td> Price </td>
+        <td> <input type="text" #price/> </td>
+    </tr>
+    <tr>
+        <td> Discount </td>
+        <td> <input type="text" #discount/> </td>
+    </tr>
+    <tr>
+        <td> Hotel Description </td>
+        <td> <input type="text" #about/> </td>
+    </tr>
+
+    <tr>
+        <td> Image Name </td>
+        <td> <input type="text" #image/> </td>
+    </tr>
+    <tr>
+        <td> <input type="reset" vaule="Clear All"></td>
+        <td> <input type="button" 
+            (click)="readHotel(hotelId.value,hotelName.value,duration.value,location.value,manager.value,price.value,discount.value,about.value,image.value)"
+            value="Add Hotel" /> </td>
+    </tr>
+    
+
+</table>
+<br/>
